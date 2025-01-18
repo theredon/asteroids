@@ -29,6 +29,11 @@ def main():
             
         for object in updateable:
             object.update(dt)
+        
+        for asteroid in asteroids:
+            if asteroid.collision(player):
+                print("Game Over!!")
+                return
 
         screen.fill("black")
 
